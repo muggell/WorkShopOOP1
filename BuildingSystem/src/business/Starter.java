@@ -55,7 +55,8 @@ public class Starter {
         sb.add(b1);
         Storage storage1 = new Storage(sb);
         storage1.addBuilding(b2);
-        
+        System.out.println(storage1);
+        storage1.removeBuilding(b1);
         System.out.println(storage1);
     }
     

@@ -24,6 +24,12 @@ public class Storage {
         }
     }
     
+    public void removeBuilding(Building... building) {
+        for (Building b : building) {
+            storage.remove(b);
+        }
+    }
+    
     @Override
     public String toString() {
         return storage.toString();
