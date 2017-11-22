@@ -28,8 +28,15 @@ public class Building {
         
     }
     
-    public void addSensor(Sensor sensor) {
-        building.add(sensor);
+    public void addSensor(Sensor... sensor) {
+        for (Sensor s : sensor) {
+            building.add(s);
+        }
+    }
+    
+    @Override
+    public String toString() {
+        return name + " " + address + " " + building.toString();
     }
     
 }
