@@ -36,5 +36,16 @@ public class Sensor {
         this.sensorReading = sensorReading;
     }
     
+    public void addReading(Reading... reading) {
+        for (Reading r1 : reading)
+            sensorReading.add(r1);
+    }
+    
+    @Override
+    public String toString() {
+        return id + sensorReading.toString();
+    }
+    
+    
     
 }

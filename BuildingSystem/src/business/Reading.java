@@ -12,16 +12,21 @@ import java.security.Timestamp;
  * @author ander
  */
 public class Reading {
-    private Timestamp time; 
+    private int time; 
     private double value; 
     private String type;
     private int id; 
     
-    public Reading(Timestamp time, double value, String type, int id) {
+    public Reading(int time, double value, String type, int id) {
         this.time = time;
         this.value = value;
         this.type = type;
         this.id = id; 
+    }
+    
+    @Override
+    public String toString() {
+        return value + " " + id;
     }
     
 }
