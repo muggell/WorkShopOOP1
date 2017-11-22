@@ -1,0 +1,16 @@
+.DS_Store
+dist/
+build/
+nbproject/private/*
+nbproject/genfiles.properties
+nbproject/build-impl.xml
+*.class
+*.jar
+*.war
+*.ear
+.idea/
+out/
+*.iml
+gameState.xml
+highScore.xml
+
