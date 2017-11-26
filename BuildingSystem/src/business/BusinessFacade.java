@@ -9,6 +9,6 @@ package business;
  *
  * @author ander
  */
-public interface ISensor {
+public class BusinessFacade {
     
 }

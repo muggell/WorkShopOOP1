@@ -34,6 +34,12 @@ public class Building {
         }
     }
     
+    public void removeSensor(Sensor... sensor) {
+        for (Sensor s : sensor) {
+            building.remove(s);
+        }
+    }
+    
     @Override
     public String toString() {
         return name + " " + address + " " + building.toString();

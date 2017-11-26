@@ -5,6 +5,7 @@
  */
 package business;
 
+import acquaintance.IBusiness;
 import java.util.ArrayList;
 
 /**
@@ -21,6 +22,12 @@ public class Storage {
     public void addBuilding(Building... building) {
         for (Building b : building) {
             storage.add(b);
+        }
+    }
+    
+    public void removeBuilding(Building... building) {
+        for (Building b : building) {
+            storage.remove(b);
         }
     }
     
