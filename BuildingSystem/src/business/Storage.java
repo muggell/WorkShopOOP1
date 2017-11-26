@@ -5,6 +5,7 @@
  */
 package business;
 
+import acquaintance.IBusiness;
 import java.util.ArrayList;
 
 /**

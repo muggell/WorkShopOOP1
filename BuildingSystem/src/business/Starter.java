@@ -17,8 +17,6 @@ public class Starter {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        
         // making readings
         Reading r1 = new Reading(5000, 30, "temperature", 1);
         Reading r2 = new Reading(5500, 32, "temperature", 2);
@@ -41,7 +39,7 @@ public class Starter {
         System.out.println(b1);
         b1.removeSensor(s2);
         System.out.println(b1);
-        
+//        
 //        // to sensor
 //        ArrayList<Reading> sr = new ArrayList<>();
 //        Sensor s1 = new Sensor(sr, 1); 

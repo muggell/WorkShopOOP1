@@ -5,9 +5,17 @@
  */
 package presentation;
 
+import business.Reading;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -16,12 +24,29 @@ import javafx.fxml.Initializable;
  */
 public class FXMLDocumentController implements Initializable {
 
+    @FXML
+    private TextField timeField;
+    @FXML
+    private TextField valueField;
+    @FXML
+    private TextField typeField;
+    @FXML
+    private TextField idField;
+    
+
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+       
     }    
+
+    @FXML
+    private void addReadingsButtonAction(ActionEvent event) {
+       
+    }
     
 }
