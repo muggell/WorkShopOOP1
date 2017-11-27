@@ -6,6 +6,7 @@
 package business;
 
 import java.util.ArrayList;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -14,14 +15,14 @@ import java.util.ArrayList;
 public class Building {
     private String name; 
     private String address;
-    private ArrayList<Sensor> building; 
+    private ObservableList<Sensor> building; 
     
     public Building(String name, String address) {
         this.name = name;
         this.address = address;
     }
     
-    public Building(String name, String address, ArrayList<Sensor> building) {
+    public Building(String name, String address, ObservableList<Sensor> building) {
         this.name = name;
         this.address = address;
         this.building = building; 

@@ -5,7 +5,9 @@
  */
 package presentation;
 
+import business.Building;
 import business.Reading;
+import business.Sensor;
 import com.sun.scenario.effect.impl.Renderer;
 import java.net.URL;
 import java.util.ArrayList;
@@ -38,24 +40,28 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private TextField typeField;
     @FXML
+    private TextField idField;
+    
+    @FXML
     private ChoiceBox<?> bReadinChoice;
     @FXML
     private ChoiceBox<String> bSensorChoice;
     @FXML
     private Button addReadingButton;
     @FXML
-    private ListView<String> readingsList;
+    private ListView<Reading> readingsList;
     @FXML
-    private ListView<String> sensorList;
+    private ListView<Sensor> sensorList;
     @FXML
     private Button removeSensorButton;
+    
     private TextField sensorReadingField;
     @FXML
     private Button addSensorButton;
     @FXML
     private TextField sensorIDField;
     @FXML
-    private ListView<String> buildingList;
+    private ListView<Building> buildingList;
     @FXML
     private Button removeBuildingButton;
     @FXML
@@ -65,15 +71,13 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private TextField buildingAddresField;
     @FXML
-    private ChoiceBox<String> sensorChoiceForRead;
-    @FXML
-    private RadioButton sensorIsCO2;
-    @FXML
-    private ToggleGroup typeSensorGroup;
-    @FXML
-    private RadioButton sensorIsTemp;
-    @FXML
     private TreeView<String> sensorTreeView;
+    
+    private ObservableList<Reading> readings; 
+    
+    private ObservableList<Sensor> sensors;
+    
+    private ObservableList<Building> buildings;
     
 
     /**
@@ -83,30 +87,39 @@ public class FXMLDocumentController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+       this.readings = FXCollections.observableArrayList();
+       readingsList.setItems(readings); 
        
+       this.sensors = FXCollections.observableArrayList();
+       sensorList.setItems(sensors);
+       
+       this.buildings = FXCollections.observableArrayList();
+       buildingList.setItems(buildings);
     }    
 
     @FXML
     private void addReadingsButtonAction(ActionEvent event) {
-        
+        Reading newReading = new Reading(Integer.parseInt(timeField.getText()), Double.parseDouble(valueField.getText()),
+            typeField.getText(), Integer.parseInt(idField.getText()));
+        readings.add(newReading);
+        timeField.clear();
+        valueField.clear();
+        typeField.clear();
+        idField.clear();
+       
     }
 
     @FXML
     private void removeSensorButtonAction(ActionEvent event) {
-        sensorList.getItems().remove(sensorList.selectionModelProperty());
+       
     }
 
     @FXML
     private void addSensorButtonAction(ActionEvent event) {
-        TreeItem<String> newItem = new TreeItem<String>(bSensorChoice.itemsProperty().getName());
-        if(sensorIsCO2.isArmed()) {
-            TreeItem<String> subItem = new TreeItem<String>(sensorIDField.getText() + "Type: CO2");
-            newItem.getChildren().add(subItem);
-        } else {
-            TreeItem<String> subItem = new TreeItem<String>(sensorIDField.getText() + "Type: Temperature");
-            newItem.getChildren().add(subItem);
-        }
-        }
+        Sensor newSensor = new Sensor(readings, Integer.parseInt(sensorIDField.getText()));
+        sensors.add(newSensor);
+        sensorIDField.clear();
+    }
 
     @FXML
     private void removeBuildingButtonAction(ActionEvent event) {
@@ -115,15 +128,9 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void addBuildingButtonAction(ActionEvent event) {
-        
-        String newBuilding = buildingNameField.getText() +  ",  " + buildingAddresField.getText();
-        buildingList.getItems().add(buildingList.getItems().size(), newBuilding);
-        buildingList.scrollTo(newBuilding);
-        buildingList.edit(buildingList.getItems().size() - 1);
-        
-        TreeItem<String> buildingTree = new TreeItem<String>(buildingNameField.getText());
-        bSensorChoice.getItems().add(buildingTree.getValue());
-        
+        Building newBuilding = new Building(buildingNameField.getText(), buildingAddresField.getText(), sensors);
+        buildings.add(newBuilding);
+        buildingNameField.clear();
+        buildingAddresField.clear();
     }
-    
 }

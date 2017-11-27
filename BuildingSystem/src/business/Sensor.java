@@ -6,16 +6,17 @@
 package business;
 
 import java.util.ArrayList;
+import javafx.collections.ObservableList;
 
 /**
  *
  * @author ander
  */
 public class Sensor {
-    private ArrayList<Reading> sensorReading; 
+    private ObservableList<Reading> sensorReading; 
     private int id; 
 
-    public Sensor(ArrayList<Reading> sensorReading, int id) {
+    public Sensor(ObservableList<Reading> sensorReading, int id) {
         this.sensorReading = sensorReading;
         this.id = id;
     }
@@ -24,7 +25,7 @@ public class Sensor {
         return sensorReading.get(sensorReading.size() - 1);
     }
     
-    public ArrayList<Reading> getHistory() {
+    public ObservableList<Reading> getHistory() {
         return sensorReading;
     }
 
@@ -32,7 +33,7 @@ public class Sensor {
         return id;
     }
 
-    public void setSensorReading(ArrayList<Reading> sensorReading) {
+    public void setSensorReading(ObservableList<Reading> sensorReading) {
         this.sensorReading = sensorReading;
     }
     
