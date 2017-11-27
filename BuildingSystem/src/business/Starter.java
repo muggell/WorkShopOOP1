@@ -16,29 +16,29 @@ public class Starter {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // making readings
-        Reading r1 = new Reading(5000, 30, "temperature", 1);
-        Reading r2 = new Reading(5500, 32, "temperature", 2);
-        Reading r3 = new Reading(6000, 34, "temperature", 3); 
-        Reading r4 = new Reading(3000, 500, "co2", 4);
-        Reading r5 = new Reading(3500, 510, "co2", 5);
-        Reading r6 = new Reading(3000, 520, "co2", 6);
-        
-        
-        ArrayList<Reading> sr = new ArrayList<>();
-        Sensor s1 = new Sensor(sr, 1);
-        s1.addReading(r1, r2, r3);
-        Sensor s2 = new Sensor(sr, 2);
-        s2.addReading(r4, r5, r6);
-        
-        ArrayList<Sensor> bs = new ArrayList<>();
-        bs.add(s1);
-        Building b1 = new Building("Bygning 1", " random street", bs);
-        b1.addSensor(s2);
-        System.out.println(b1);
-        b1.removeSensor(s2);
-        System.out.println(b1);
+//    public static void main(String[] args) {
+//        // making readings
+//        Reading r1 = new Reading(5000, 30, "temperature", 1);
+//        Reading r2 = new Reading(5500, 32, "temperature", 2);
+//        Reading r3 = new Reading(6000, 34, "temperature", 3); 
+//        Reading r4 = new Reading(3000, 500, "co2", 4);
+//        Reading r5 = new Reading(3500, 510, "co2", 5);
+//        Reading r6 = new Reading(3000, 520, "co2", 6);
+//        
+//        
+//        ArrayList<Reading> sr = new ArrayList<>();
+//        Sensor s1 = new Sensor(sr, 1);
+//        s1.addReading(r1, r2, r3);
+//        Sensor s2 = new Sensor(sr, 2);
+//        s2.addReading(r4, r5, r6);
+//        
+//        ArrayList<Sensor> bs = new ArrayList<>();
+//        bs.add(s1);
+//        Building b1 = new Building("Bygning 1", " random street", bs);
+//        b1.addSensor(s2);
+//        System.out.println(b1);
+//        b1.removeSensor(s2);
+//        System.out.println(b1);
 //        
 //        // to sensor
 //        ArrayList<Reading> sr = new ArrayList<>();
@@ -73,6 +73,6 @@ public class Starter {
 //        System.out.println(storage1);
 
 
-    }
+//    }
     
 }
