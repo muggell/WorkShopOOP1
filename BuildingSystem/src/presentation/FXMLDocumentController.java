@@ -117,7 +117,7 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void addSensorButtonAction(ActionEvent event) {
-        Sensor newSensor = new Sensor(readings, sensorIDField.getText());
+        Sensor newSensor = new Sensor(readings, (bSensorChoice.selectionModelProperty().get().getSelectedItem() + " :  " + sensorIDField.getText()));
         sensors.add(newSensor);
         bReadinChoice.getItems().add(sensors.size()-1, newSensor.getId());
         sensorIDField.clear();
