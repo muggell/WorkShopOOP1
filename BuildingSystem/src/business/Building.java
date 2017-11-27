@@ -34,6 +34,14 @@ public class Building {
             building.add(s);
         }
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
     
     public void removeSensor(Sensor... sensor) {
         for (Sensor s : sensor) {

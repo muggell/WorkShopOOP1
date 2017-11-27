@@ -7,15 +7,20 @@ package business;
 
 import acquaintance.IBusiness;
 import java.util.ArrayList;
+import javafx.collections.ObservableList;
 
 /**
  *
  * @author ander
  */
 public class Storage {
-    private ArrayList<Building> storage; 
+    private ObservableList<Building> storage; 
     
-    public Storage(ArrayList<Building> storage) {
+    public Building getBuilding(int placement) {
+        return storage.get(placement);
+    }
+    
+    public Storage(ObservableList<Building> storage) {
         this.storage = storage;
     }
     

@@ -79,7 +79,7 @@ public class FXMLDocumentController implements Initializable {
     
     private ObservableList<Building> buildings;
     
-
+    
     /**
      * Initializes the controller class.
      * @param url
@@ -130,6 +130,7 @@ public class FXMLDocumentController implements Initializable {
     private void addBuildingButtonAction(ActionEvent event) {
         Building newBuilding = new Building(buildingNameField.getText(), buildingAddresField.getText(), sensors);
         buildings.add(newBuilding);
+        bSensorChoice.getItems().add(buildings.size()+1, newBuilding.getName());
         buildingNameField.clear();
         buildingAddresField.clear();
     }
