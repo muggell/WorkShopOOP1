@@ -18,13 +18,13 @@ public class Starter {
      */
 //    public static void main(String[] args) {
 //        // making readings
-//        Reading r1 = new Reading(5000, 30, "temperature", 1);
-//        Reading r2 = new Reading(5500, 32, "temperature", 2);
-//        Reading r3 = new Reading(6000, 34, "temperature", 3); 
-//        Reading r4 = new Reading(3000, 500, "co2", 4);
-//        Reading r5 = new Reading(3500, 510, "co2", 5);
-//        Reading r6 = new Reading(3000, 520, "co2", 6);
-//        
+        Reading r1 = new Reading(5000, 30, "temperature", 1);
+        Reading r2 = new Reading(5500, 32, "temperature", 2);
+        Reading r3 = new Reading(6000, 34, "temperature", 3); 
+        Reading r4 = new Reading(3000, 500, "co2", 4);
+        Reading r5 = new Reading(3500, 510, "co2", 5);
+        Reading r6 = new Reading(3000, 520, "co2", 6);
+        
 //        
 //        ArrayList<Reading> sr = new ArrayList<>();
 //        Sensor s1 = new Sensor(sr, 1);
