@@ -99,8 +99,8 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void addReadingsButtonAction(ActionEvent event) {
-        Reading newReading = new Reading(Integer.parseInt(timeField.getText()), Double.parseDouble(valueField.getText()),
-            typeField.getText(), Integer.parseInt(idField.getText()));
+        Reading newReading = new Reading((bReadinChoice.selectionModelProperty().get().getSelectedItem() + " :  " + typeField.getText()),
+                Integer.parseInt(timeField.getText()), Double.parseDouble(valueField.getText()), Integer.parseInt(idField.getText()));
         readings.add(newReading);
         timeField.clear();
         valueField.clear();
