@@ -43,7 +43,7 @@ public class FXMLDocumentController implements Initializable {
     private TextField idField;
     
     @FXML
-    private ChoiceBox<?> bReadinChoice;
+    private ChoiceBox<String> bReadinChoice;
     @FXML
     private ChoiceBox<String> bSensorChoice;
     @FXML
@@ -111,26 +111,28 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void removeSensorButtonAction(ActionEvent event) {
+       sensorList.getItems().remove(sensorList.getSelectionModel().getSelectedItem());
        
     }
 
     @FXML
     private void addSensorButtonAction(ActionEvent event) {
-        Sensor newSensor = new Sensor(readings, Integer.parseInt(sensorIDField.getText()));
+        Sensor newSensor = new Sensor(readings, sensorIDField.getText());
         sensors.add(newSensor);
+        bReadinChoice.getItems().add(sensors.size()-1, newSensor.getId());
         sensorIDField.clear();
     }
 
     @FXML
     private void removeBuildingButtonAction(ActionEvent event) {
-        
+        buildingList.getItems().remove(buildingList.getSelectionModel().getSelectedItem());
     }
 
     @FXML
     private void addBuildingButtonAction(ActionEvent event) {
         Building newBuilding = new Building(buildingNameField.getText(), buildingAddresField.getText(), sensors);
         buildings.add(newBuilding);
-        bSensorChoice.getItems().add(buildings.size()+1, newBuilding.getName());
+        bSensorChoice.getItems().add(buildings.size()-1, newBuilding.getName());
         buildingNameField.clear();
         buildingAddresField.clear();
     }

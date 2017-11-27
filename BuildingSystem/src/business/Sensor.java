@@ -14,9 +14,9 @@ import javafx.collections.ObservableList;
  */
 public class Sensor {
     private ObservableList<Reading> sensorReading; 
-    private int id; 
+    private String id; 
 
-    public Sensor(ObservableList<Reading> sensorReading, int id) {
+    public Sensor(ObservableList<Reading> sensorReading, String id) {
         this.sensorReading = sensorReading;
         this.id = id;
     }
@@ -29,7 +29,7 @@ public class Sensor {
         return sensorReading;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
