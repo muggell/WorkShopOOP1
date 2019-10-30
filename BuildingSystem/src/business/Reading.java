@@ -17,7 +17,7 @@ public class Reading {
     private String type;
     private int id; 
     
-    public Reading(int time, double value, String type, int id) {
+    public Reading(String type, int time, double value, int id) {
         this.time = time;
         this.value = value;
         this.type = type;
