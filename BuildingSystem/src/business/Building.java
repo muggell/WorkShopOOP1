@@ -51,7 +51,7 @@ public class Building {
     
     @Override
     public String toString() {
-        return name + " " + address + " " + building.toString();
+        return name + " " + address;
     }
     
 }
